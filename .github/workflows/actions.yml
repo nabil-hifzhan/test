@@ -1,11 +1,8 @@
 name: run main.py
 
 on:
-  workflow_dispatch:  # Add this to your workflow file
-  push:
-    branches: [ main ] # Or your main branch name
-  # schedule:
-  #   - cron: '0 0 * * *' # Your schedule
+  schedule:
+    - cron: '*/10 * * * *' # At 00:00 on Monda
 
 jobs:
   my_job:
@@ -13,10 +10,6 @@ jobs:
     steps:
       - name: My Step
         run: echo "Hello, world!"
-
-# on:
-#   schedule:
-#     - cron: '*/10 * * * *' # At 00:00 on Monda
 
 # jobs:
 #   build:
